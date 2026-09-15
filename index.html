@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GGNesia — Berita Gaming Indonesia</title>
+
+    <meta
+        name="description"
+        content="GGNesia adalah portal berita gaming Indonesia yang menghadirkan berita game terbaru, update, review, guide, esports, dan industri game."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <!-- Hamburger -->
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <span class="logo-main">GG</span><span class="logo-accent">Nesia</span>
+            </a>
+
+            <!-- Search -->
+            <button
+                class="search-button"
+                id="searchButton"
+                aria-label="Cari berita"
+            >
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MOBILE MENU ================= -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <aside class="mobile-menu" id="mobileMenu">
+
+        <div class="menu-header">
+
+            <button
+                class="close-menu"
+                id="closeMenu"
+                aria-label="Tutup menu"
+            >
+                ×
+            </button>
+
+            <span>MENU</span>
+
+        </div>
+
+
+        <nav class="main-navigation">
+
+            <a href="#" class="menu-link">
+                HOME
+            </a>
+
+            <a href="#" class="menu-link">
+                NEWS
+            </a>
+
+
+            <!-- GAME -->
+            <div class="menu-group">
+
+                <button class="menu-group-title">
+                    GAME
+                    <span class="arrow">⌄</span>
+                </button>
+
+                <div class="submenu">
+
+                    <a href="#">MOBILE</a>
+                    <a href="#">PC</a>
+                    <a href="#">CONSOLE</a>
+                    <a href="#">INDIE</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- UPDATE -->
+            <div class="menu-group">
+
+                <button class="menu-group-title">
+                    UPDATE
+                    <span class="arrow">⌄</span>
+                </button>
+
+                <div class="submenu">
+
+                    <a href="#">PATCH</a>
+                    <a href="#">SEASON</a>
+                    <a href="#">DLC</a>
+                    <a href="#">EXPANSION</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ESPORTS -->
+            <div class="menu-group">
+
+                <button class="menu-group-title">
+                    ESPORTS
+                    <span class="arrow">⌄</span>
+                </button>
+
+                <div class="submenu">
+
+                    <a href="#">MOBILE LEGENDS</a>
+                    <a href="#">PUBG MOBILE</a>
+                    <a href="#">FREE FIRE</a>
+                    <a href="#">VALORANT</a>
+                    <a href="#">DOTA 2</a>
+                    <a href="#">OTHER</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- INDUSTRY -->
+            <div class="menu-group">
+
+                <button class="menu-group-title">
+                    INDUSTRY
+                    <span class="arrow">⌄</span>
+                </button>
+
+                <div class="submenu">
+
+                    <a href="#">DEVELOPER</a>
+                    <a href="#">PUBLISHER</a>
+                    <a href="#">EVENT</a>
+                    <a href="#">GAMING INDUSTRY</a>
+
+                </div>
+
+            </div>
+
+
+            <a href="#" class="menu-link">
+                REVIEW
+            </a>
+
+            <a href="#" class="menu-link">
+                GUIDE
+            </a>
+
+            <a href="#" class="menu-link">
+                TIPS &amp; TRICK
+            </a>
+
+        </nav>
+
+
+        <!-- Social -->
+        <div class="menu-social">
+
+            <span>FOLLOW GGNESIA</span>
+
+            <div class="social-links">
+
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="Facebook">FB</a>
+                <a href="#" aria-label="X">X</a>
+                <a href="#" aria-label="YouTube">YT</a>
+                <a href="#" aria-label="TikTok">TT</a>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= SEARCH PANEL ================= -->
+    <div class="search-panel" id="searchPanel">
+
+        <div class="search-box">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Cari berita gaming..."
+                autocomplete="off"
+            >
+
+            <button id="searchSubmit">
+                Cari
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+
+        <!-- ================= TRENDING ================= -->
+        <section class="trending-section">
+
+            <div class="container trending-container">
+
+                <div class="trending-label">
+                    TRENDING
+                </div>
+
+                <div class="trending-content">
+
+                    <span class="trending-number">01</span>
+
+                    <p>
+                        Berita gaming terbaru hari ini yang sedang ramai dibicarakan
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HERO ================= -->
+        <section class="hero-section">
+
+            <div class="container">
+
+                <div class="hero-card">
+
+                    <div class="hero-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1400&q=80"
+                            alt="Gaming setup"
+                        >
+
+                        <div class="hero-overlay"></div>
+
+                    </div>
+
+
+                    <div class="hero-content">
+
+                        <span class="category">
+                            GAME NEWS
+                        </span>
+
+                        <h1>
+                            Berita Gaming Terbaru dan Terhangat Hari Ini
+                        </h1>
+
+                        <p class="article-meta">
+                            GGNesia &nbsp;•&nbsp; 15 September 2026
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Slider dots -->
+                <div class="slider-dots">
+
+                    <button class="active" aria-label="Berita 1"></button>
+                    <button aria-label="Berita 2"></button>
+                    <button aria-label="Berita 3"></button>
+                    <button aria-label="Berita 4"></button>
+                    <button aria-label="Berita 5"></button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= POPULAR ================= -->
+        <section class="popular-section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <h2>
+                        Terpopuler
+                    </h2>
+
+                </div>
+
+
+                <div class="popular-list">
+
+
+                    <!-- Article 1 -->
+                    <article class="popular-card">
+
+                        <div class="popular-content">
+
+                            <span class="category">
+                                MOBILE
+                            </span>
+
+                            <h3>
+                                Game Mobile Terbaru yang Wajib Kamu Coba Tahun Ini
+                            </h3>
+
+                            <p class="article-meta">
+                                GGNesia &nbsp;•&nbsp; 15 September 2026
+                            </p>
+
+                        </div>
+
+                        <div class="popular-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=600&q=80"
+                                alt="Mobile gaming"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Article 2 -->
+                    <article class="popular-card">
+
+                        <div class="popular-content">
+
+                            <span class="category">
+                                PC
+                            </span>
+
+                            <h3>
+                                Update Besar Game PC Hadir dengan Banyak Fitur Baru
+                            </h3>
+
+                            <p class="article-meta">
+                                GGNesia &nbsp;•&nbsp; 14 September 2026
+                            </p>
+
+                        </div>
+
+                        <div class="popular-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1592840496694-26c035b52b48?auto=format&fit=crop&w=600&q=80"
+                                alt="PC gaming"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Article 3 -->
+                    <article class="popular-card">
+
+                        <div class="popular-content">
+
+                            <span class="category">
+                                CONSOLE
+                            </span>
+
+                            <h3>
+                                Game Console Baru Siap Hadir dengan Pengalaman Berbeda
+                            </h3>
+
+                            <p class="article-meta">
+                                GGNesia &nbsp;•&nbsp; 13 September 2026
+                            </p>
+
+                        </div>
+
+                        <div class="popular-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1605901309584-818e25960a8f?auto=format&fit=crop&w=600&q=80"
+                                alt="Console gaming"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Article 4 -->
+                    <article class="popular-card">
+
+                        <div class="popular-content">
+
+                            <span class="category">
+                                UPDATE
+                            </span>
+
+                            <h3>
+                                Patch Terbaru Membawa Perubahan Besar untuk Para Pemain
+                            </h3>
+
+                            <p class="article-meta">
+                                GGNesia &nbsp;•&nbsp; 12 September 2026
+                            </p>
+
+                        </div>
+
+                        <div class="popular-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80"
+                                alt="Gaming console"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LATEST ================= -->
+        <section class="latest-section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span></span>
+
+                    <h2>
+                        Berita Terbaru
+                    </h2>
+
+                </div>
+
+
+                <div class="latest-grid">
+
+
+                    <article class="latest-card">
+
+                        <div class="latest-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80"
+                                alt="Gaming"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="latest-content">
+
+                            <span class="category">
+                                NEWS
+                            </span>
+
+                            <h3>
+                                Industri Game Terus Berkembang dengan Banyak Judul Baru
+                            </h3>
+
+                            <p class="article-meta">
+                                15 September 2026
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="latest-card">
+
+                        <div class="latest-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=900&q=80"
+                                alt="Video game"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="latest-content">
+
+                            <span class="category">
+                                UPDATE
+                            </span>
+
+                            <h3>
+                                Developer Mengumumkan Update Baru untuk Game Favorit Pemain
+                            </h3>
+
+                            <p class="article-meta">
+                                15 September 2026
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="latest-card">
+
+                        <div class="latest-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?auto=format&fit=crop&w=900&q=80"
+                                alt="Gaming event"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="latest-content">
+
+                            <span class="category">
+                                EVENT
+                            </span>
+
+                            <h3>
+                                Event Gaming Besar Siap Digelar dan Hadirkan Banyak Konten
+                            </h3>
+
+                            <p class="article-meta">
+                                14 September 2026
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="latest-card">
+
+                        <div class="latest-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1547394765-185e1e68f34e?auto=format&fit=crop&w=900&q=80"
+                                alt="Esports gaming"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+                        <div class="latest-content">
+
+                            <span class="category">
+                                ESPORTS
+                            </span>
+
+                            <h3>
+                                Kompetisi Gaming Kembali Memasuki Babak Baru
+                            </h3>
+
+                            <p class="article-meta">
+                                14 September 2026
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-logo">
+                GG<span>Nesia</span>
+            </div>
+
+            <p>
+                Portal berita gaming Indonesia.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#">Tentang Kami</a>
+                <a href="#">Kontak</a>
+                <a href="#">Redaksi</a>
+                <a href="#">Kebijakan Privasi</a>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 GGNesia. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+  </html>
