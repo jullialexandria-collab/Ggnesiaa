@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GGNesia - Portal Dunia Game & Esports Indonesia</title>
+
+    <meta
+        name="description"
+        content="GGNesia adalah portal berita game dan esports Indonesia."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <!-- Tombol Menu -->
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Buka menu"
+            >
+                ☰
+            </button>
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                GG<span>Nesia</span>
+            </a>
+
+            <!-- Pencarian -->
+            <button
+                class="search-button"
+                id="searchButton"
+                aria-label="Cari berita"
+            >
+                🔍
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGASI -->
+    <nav class="main-nav">
+
+        <div class="nav-container">
+
+            <a href="#">Home</a>
+            <a href="#">News</a>
+            <a href="#">Esports</a>
+            <a href="#">Games</a>
+            <a href="#">Tips & Guide</a>
+            <a href="#">Tech</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MENU MOBILE -->
+    <aside class="mobile-menu" id="mobileMenu">
+
+        <div class="mobile-menu-header">
+
+            <div class="mobile-logo">
+                GG<span>Nesia</span>
+            </div>
+
+            <button
+                class="close-menu"
+                id="closeMenu"
+                aria-label="Tutup menu"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="mobile-menu-content">
+
+            <a href="#">Home</a>
+
+            <details>
+                <summary>News</summary>
+
+                <a href="#">Game Terbaru</a>
+                <a href="#">Update Game</a>
+                <a href="#">Event</a>
+                <a href="#">Developer</a>
+                <a href="#">Publisher</a>
+                <a href="#">Gaming Industry</a>
+
+            </details>
+
+
+            <details>
+                <summary>Esports</summary>
+
+                <a href="#">Mobile Legends</a>
+                <a href="#">PUBG Mobile</a>
+                <a href="#">Free Fire</a>
+                <a href="#">Honor of Kings</a>
+                <a href="#">EFootball</a>
+                <a href="#">Dota 2</a>
+                <a href="#">Other</a>
+
+            </details>
+
+
+            <details>
+                <summary>Games</summary>
+
+                <a href="#">PC</a>
+                <a href="#">PlayStation</a>
+                <a href="#">Xbox</a>
+                <a href="#">Nintendo</a>
+                <a href="#">Mobile</a>
+
+            </details>
+
+
+            <details>
+                <summary>Tips & Guide</summary>
+
+                <a href="#">Tips & Trick</a>
+                <a href="#">Guide</a>
+                <a href="#">Review</a>
+
+            </details>
+
+
+            <details>
+                <summary>Tech</summary>
+
+                <a href="#">Gadget</a>
+                <a href="#">Hardware</a>
+                <a href="#">Technology</a>
+
+            </details>
+
+        </div>
+
+    </aside>
+
+
+    <!-- OVERLAY MENU -->
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+    <!-- SEARCH -->
+    <section
+        class="search-panel"
+        id="searchPanel"
+    >
+
+        <div class="search-container">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Cari berita game..."
+                autocomplete="off"
+            >
+
+            <button id="searchSubmit">
+                Cari
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <h1>Berita Gaming Terbaru</h1>
+                    <p>
+                        Informasi terbaru seputar game dan esports.
+                    </p>
+                </div>
+
+
+                <div class="hero-grid">
+
+                    <!-- Berita utama -->
+                    <article class="hero-main">
+
+                        <div class="article-image">
+                            <img
+                                src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80"
+                                alt="Gaming"
+                            >
+                        </div>
+
+                        <div class="article-content">
+
+                            <span class="category">
+                                FEATURED
+                            </span>
+
+                            <h2>
+                                Berita Gaming Terbaru yang Sedang Ramai
+                            </h2>
+
+                            <p>
+                                Ikuti kabar terbaru dari dunia game,
+                                esports, developer, dan industri gaming.
+                            </p>
+
+                            <div class="article-meta">
+                                15 September 2026
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Berita samping -->
+                    <div class="hero-side">
+
+                        <article class="news-card">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=700&q=80"
+                                alt="Game"
+                            >
+
+                            <div class="news-card-content">
+
+                                <span class="category">
+                                    NEWS
+                                </span>
+
+                                <h3>
+                                    Update game terbaru yang wajib kamu tahu
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="news-card">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=700&q=80"
+                                alt="Gaming console"
+                            >
+
+                            <div class="news-card-content">
+
+                                <span class="category">
+                                    GAMES
+                                </span>
+
+                                <h3>
+                                    Game baru yang menarik perhatian gamer
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TERPOPULER -->
+        <section class="popular-section">
+
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Terpopuler</h2>
+                    <a href="#">Lihat Semua →</a>
+                </div>
+
+
+                <div class="news-grid">
+
+                    <article class="news-item">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=700&q=80"
+                            alt="Gaming"
+                        >
+
+                        <span class="category">
+                            ESPORTS
+                        </span>
+
+                        <h3>
+                            Perkembangan esports Indonesia terbaru
+                        </h3>
+
+                    </article>
+
+
+                    <article class="news-item">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1560253023-3ec5d502959f?auto=format&fit=crop&w=700&q=80"
+                            alt="Gaming setup"
+                        >
+
+                        <span class="category">
+                            TECH
+                        </span>
+
+                        <h3>
+                            Perangkat gaming yang sedang populer
+                        </h3>
+
+                    </article>
+
+
+                    <article class="news-item">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&w=700&q=80"
+                            alt="Gaming setup"
+                        >
+
+                        <span class="category">
+                            GAMES
+                        </span>
+
+                        <h3>
+                            Game yang banyak dimainkan gamer saat ini
+                        </h3>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BERITA TERBARU -->
+        <section class="latest-section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>Berita Terbaru</h2>
+
+                    <a href="#">
+                        Lihat Semua →
+                    </a>
+
+                </div>
+
+
+                <div class="latest-layout">
+
+                    <!-- LIST BERITA -->
+                    <div class="latest-list">
+
+                        <article class="latest-card">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1603481546238-487240415921?auto=format&fit=crop&w=700&q=80"
+                                alt="Gaming"
+                            >
+
+                            <div>
+
+                                <span class="category">
+                                    NEWS
+                                </span>
+
+                                <h3>
+                                    Informasi terbaru dari dunia game
+                                </h3>
+
+                                <p>
+                                    Kabar terbaru, update dan event gaming.
+                                </p>
+
+                                <small>
+                                    2 jam yang lalu
+                                </small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="latest-card">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1592840062661-33c9d8d3f7a0?auto=format&fit=crop&w=700&q=80"
+                                alt="Esports"
+                            >
+
+                            <div>
+
+                                <span class="category">
+                                    ESPORTS
+                                </span>
+
+                                <h3>
+                                    Kompetisi esports terbaru
+                                </h3>
+
+                                <p>
+                                    Simak berita dan perkembangan esports.
+                                </p>
+
+                                <small>
+                                    4 jam yang lalu
+                                </small>
+
+                            </div>
+
+                        </article>
+
+
+                        <article class="latest-card">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?auto=format&fit=crop&w=700&q=80"
+                                alt="Game controller"
+                            >
+
+                            <div>
+
+                                <span class="category">
+                                    GAMES
+                                </span>
+
+                                <h3>
+                                    Game terbaru yang patut dinantikan
+                                </h3>
+
+                                <p>
+                                    Berbagai game menarik dari berbagai platform.
+                                </p>
+
+                                <small>
+                                    6 jam yang lalu
+                                </small>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                    <!-- SIDEBAR -->
+                    <aside class="sidebar">
+
+                        <div class="sidebar-box">
+
+                            <h2>
+                                GGNesia
+                            </h2>
+
+                            <p>
+                                Portal berita gaming dan esports
+                                Indonesia.
+                            </p>
+
+                        </div>
+
+
+                        <div class="sidebar-box">
+
+                            <h3>
+                                Kategori
+                            </h3>
+
+                            <a href="#">News</a>
+                            <a href="#">Esports</a>
+                            <a href="#">Games</a>
+                            <a href="#">Tips & Guide</a>
+                            <a href="#">Tech</a>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-logo">
+                GG<span>Nesia</span>
+            </div>
+
+            <p>
+                Portal Dunia Game & Esports Indonesia
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#">Tentang Kami</a>
+                <a href="#">Kontak</a>
+                <a href="#">Kebijakan Privasi</a>
+
+            </div>
+
+            <p class="copyright">
+                © 2026 GGNesia. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+                          </html>
