@@ -1027,3 +1027,80 @@ img {
         min-height: 430px;
 
         border-radius: 
+/* =========================================================
+   PERBAIKAN TERPOPULER - MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .popular-list {
+        padding: 0 16px;
+    }
+
+    .popular-card {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 110px;
+        align-items: start;
+        gap: 14px;
+
+        padding: 20px 0;
+    }
+
+    .popular-content {
+        min-width: 0;
+        width: 100%;
+    }
+
+    .popular-content h3 {
+        margin: 8px 0 10px;
+
+        font-size: 17px;
+        line-height: 1.4;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .popular-content .article-meta {
+        line-height: 1.5;
+    }
+
+    .popular-image {
+        width: 110px;
+        height: 95px;
+
+        border-radius: 12px;
+
+        overflow: hidden;
+    }
+
+    .popular-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+}
+
+
+/* HP KECIL */
+@media (max-width: 380px) {
+
+    .popular-card {
+        grid-template-columns: minmax(0, 1fr) 95px;
+        gap: 12px;
+    }
+
+    .popular-image {
+        width: 95px;
+        height: 82px;
+    }
+
+    .popular-content h3 {
+        font-size: 15px;
+    }
+
+}
