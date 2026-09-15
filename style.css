@@ -233,20 +233,19 @@ img {
 
 .mobile-menu {
     position: fixed;
-
     top: 0;
-    left: -320px;
+    left: -100%;
 
-    width: 300px;
-    height: 100vh;
+    width: min(360px, 86vw);
+    height: 100dvh;
 
     z-index: 2000;
 
-    background: var(--navy);
-
-    border-right: 1px solid var(--border);
+    background: #0f172a;
+    border-right: 1px solid #263246;
 
     overflow-y: auto;
+    overscroll-behavior: contain;
 
     transition: left 0.3s ease;
 }
@@ -255,7 +254,13 @@ img {
     left: 0;
 }
 
+
+/* ---------- MENU HEADER ---------- */
+
 .mobile-menu-header {
+    position: sticky;
+    top: 0;
+
     height: 72px;
 
     padding: 0 20px;
@@ -264,52 +269,158 @@ img {
     align-items: center;
     justify-content: space-between;
 
-    border-bottom: 1px solid var(--border);
+    background: #0f172a;
+    border-bottom: 1px solid #263246;
+
+    z-index: 5;
 }
 
+.mobile-logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.mobile-logo span {
+    color: #3b82f6;
+}
+
+
+/* ---------- CLOSE BUTTON ---------- */
+
+.close-menu {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #263246;
+    border-radius: 10px;
+
+    background: #162033;
+    color: #f8fafc;
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.2s;
+}
+
+.close-menu:hover {
+    background: #3b82f6;
+    border-color: #3b82f6;
+}
+
+
+/* ---------- MENU CONTENT ---------- */
+
 .mobile-menu-content {
-    padding: 15px 20px;
+    padding: 12px 20px 40px;
 }
 
 .mobile-menu-content > a,
 .mobile-menu-content details summary {
-    display: block;
+    position: relative;
 
-    padding: 13px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    color: var(--white);
+    min-height: 62px;
 
-    font-size: 15px;
+    padding: 0 8px;
+
+    color: #f8fafc;
+
+    font-size: 17px;
     font-weight: 700;
 
     cursor: pointer;
+
+    list-style: none;
+
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+
+    transition: 0.2s;
 }
+
+
+/* Hilangkan tanda default details */
+
+.mobile-menu-content summary::-webkit-details-marker {
+    display: none;
+}
+
+.mobile-menu-content summary::after {
+    content: "›";
+
+    color: #94a3b8;
+
+    font-size: 27px;
+    font-weight: 400;
+
+    transform: rotate(0deg);
+
+    transition: 0.2s;
+}
+
+.mobile-menu-content details[open] summary::after {
+    color: #3b82f6;
+    transform: rotate(90deg);
+}
+
+
+/* ---------- HOVER ---------- */
 
 .mobile-menu-content > a:hover,
 .mobile-menu-content details summary:hover {
-    color: var(--blue);
+    color: #3b82f6;
 }
 
+
+/* ---------- SUBMENU ---------- */
+
 .mobile-menu-content details {
-    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.mobile-menu-content details[open] summary {
+    color: #3b82f6;
+    border-bottom: 0;
 }
 
 .mobile-menu-content details a {
     display: block;
 
-    padding: 8px 15px;
+    padding: 13px 15px;
 
-    color: var(--gray);
+    color: #94a3b8;
 
     font-size: 14px;
+    font-weight: 600;
+
+    border-left: 2px solid #263246;
+
+    transition: 0.2s;
 }
 
 .mobile-menu-content details a:hover {
-    color: var(--blue);
+    padding-left: 20px;
+
+    color: #f8fafc;
+
+    border-left-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.08);
 }
 
 
-/* ---------- OVERLAY ---------- */
+/* ========================================
+   MENU OVERLAY
+======================================== */
 
 .menu-overlay {
     position: fixed;
@@ -318,17 +429,55 @@ img {
 
     z-index: 1500;
 
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.72);
 
     opacity: 0;
     visibility: hidden;
 
-    transition: 0.3s;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 }
 
 .menu-overlay.active {
     opacity: 1;
     visibility: visible;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    .mobile-menu {
+        width: min(360px, 86vw);
+    }
+
+    .mobile-menu-header {
+        height: 68px;
+    }
+
+    .mobile-logo {
+        font-size: 24px;
+    }
+
+    .mobile-menu-content {
+        padding: 8px 16px 35px;
+    }
+
+    .mobile-menu-content > a,
+    .mobile-menu-content details summary {
+        min-height: 58px;
+        font-size: 16px;
+    }
+
+    .mobile-menu-content details a {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
 }
 
 
