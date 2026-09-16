@@ -1,11 +1,30 @@
 /* =====================================================
    GGNESIA NEWS
-   DARK GAMING NEWS WEBSITE
+   DARK GAMING DESIGN
    ===================================================== */
+
+:root {
+    --bg: #080d1c;
+    --bg-2: #0d1527;
+    --card: #151f33;
+    --card-2: #1b263b;
+
+    --text: #f5f7fb;
+    --muted: #8d9bb2;
+
+    --accent: #22d3ee;
+    --accent-2: #8b5cf6;
+
+    --border: #26344c;
+
+    --header: 74px;
+
+    --radius: 22px;
+}
 
 
 /* =====================================================
-   1. RESET
+   RESET
    ===================================================== */
 
 * {
@@ -19,16 +38,28 @@ html {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0b1120;
-    color: #f8fafc;
-    line-height: 1.6;
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(34, 211, 238, 0.06),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
     overflow-x: hidden;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+body.menu-open {
+    overflow: hidden;
 }
 
 button,
@@ -36,34 +67,22 @@ input {
     font: inherit;
 }
 
+button {
+    cursor: pointer;
+}
 
-/* =====================================================
-   2. VARIABLES
-   ===================================================== */
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-:root {
-    --bg: #0b1120;
-    --bg-soft: #111827;
-    --card: #172033;
-    --card-light: #1e293b;
-
-    --text: #f8fafc;
-    --text-soft: #94a3b8;
-
-    --cyan: #22d3ee;
-    --cyan-dark: #0891b2;
-
-    --purple: #8b5cf6;
-    --border: #263449;
-
-    --header-height: 78px;
-
-    --radius: 22px;
+img {
+    max-width: 100%;
 }
 
 
 /* =====================================================
-   3. HEADER
+   HEADER
    ===================================================== */
 
 .site-header {
@@ -72,32 +91,30 @@ input {
     z-index: 1000;
 
     width: 100%;
-    height: var(--header-height);
+    height: var(--header);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 32px;
+    padding: 0 30px;
 
-    background: rgba(11, 17, 32, 0.96);
+    background: rgba(8, 13, 28, 0.96);
+
     border-bottom: 1px solid var(--border);
 
     backdrop-filter: blur(14px);
 }
 
 
-/* LEFT */
+/* =====================================================
+   MENU BUTTON
+   ===================================================== */
 
 .header-left {
     display: flex;
     align-items: center;
 }
-
-
-/* =====================================================
-   MENU BUTTON
-   ===================================================== */
 
 .menu-button {
     width: 46px;
@@ -106,29 +123,30 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+
     gap: 6px;
 
     border: 0;
-    background: transparent;
 
-    cursor: pointer;
+    background: transparent;
 }
 
 .menu-button span {
-    display: block;
-
     width: 29px;
     height: 3px;
+
+    display: block;
 
     background: var(--text);
 
     border-radius: 10px;
 
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 .menu-button:hover span {
-    background: var(--cyan);
+    background: var(--accent);
 }
 
 
@@ -148,26 +166,26 @@ input {
     flex-direction: column;
     align-items: center;
 
-    font-size: 26px;
-    font-weight: 900;
-    letter-spacing: -1px;
-
     color: var(--text);
+
+    font-size: 25px;
+    font-weight: 900;
+
+    letter-spacing: 2px;
 }
 
 .logo span {
-    color: var(--cyan);
+    color: var(--accent);
 }
 
 .logo small {
-    margin-top: -4px;
+    margin-top: -2px;
 
-    font-size: 7px;
-    font-weight: 700;
+    color: var(--muted);
 
-    letter-spacing: 2px;
+    font-size: 6px;
 
-    color: var(--text-soft);
+    letter-spacing: 3px;
 }
 
 
@@ -180,58 +198,63 @@ input {
     height: 46px;
 
     border: 0;
+
     background: transparent;
 
     color: var(--text);
 
-    font-size: 25px;
+    font-size: 24px;
 
-    cursor: pointer;
-
-    transition: 0.3s;
+    transition: 0.25s;
 }
 
 .search-button:hover {
-    color: var(--cyan);
+    color: var(--accent);
+
     transform: scale(1.08);
 }
 
 
 /* =====================================================
-   4. SEARCH BOX
+   SEARCH BOX
    ===================================================== */
 
 .search-box {
     position: fixed;
 
-    top: var(--header-height);
+    top: calc(var(--header) + 12px);
     left: 50%;
 
-    transform: translate(-50%, -130%);
-
-    width: min(700px, calc(100% - 30px));
+    width: min(650px, calc(100% - 30px));
 
     display: flex;
 
-    padding: 10px;
+    padding: 9px;
 
     background: var(--card);
 
     border: 1px solid var(--border);
-    border-radius: 16px;
 
-    z-index: 900;
+    border-radius: 17px;
+
+    z-index: 1900;
 
     opacity: 0;
+    visibility: hidden;
+
+    transform: translate(-50%, -15px);
 
     transition:
-        transform 0.35s ease,
-        opacity 0.35s ease;
+        opacity 0.25s,
+        transform 0.25s,
+        visibility 0.25s;
 }
 
 .search-box.active {
-    transform: translate(-50%, 15px);
     opacity: 1;
+    visibility: visible;
+
+    transform: translate(-50%, 0);
 }
 
 .search-box input {
@@ -239,44 +262,48 @@ input {
 
     min-width: 0;
 
-    padding: 13px 16px;
-
-    color: var(--text);
-
-    background: var(--bg-soft);
+    padding: 13px 15px;
 
     border: 1px solid var(--border);
 
-    border-radius: 10px;
-
     outline: none;
+
+    border-radius: 11px;
+
+    background: var(--bg-2);
+
+    color: var(--text);
+
+    font-size: 15px;
 }
 
 .search-box input:focus {
-    border-color: var(--cyan);
+    border-color: var(--accent);
+}
+
+.search-box input::placeholder {
+    color: var(--muted);
 }
 
 .search-box button {
-    width: 55px;
+    width: 52px;
 
     margin-left: 8px;
 
     border: 0;
 
-    border-radius: 10px;
+    border-radius: 11px;
 
-    background: var(--cyan);
+    background: var(--accent);
 
     color: #061018;
-
-    cursor: pointer;
 
     font-size: 20px;
 }
 
 
 /* =====================================================
-   5. SIDE MENU
+   SIDE MENU
    ===================================================== */
 
 .side-menu {
@@ -285,17 +312,18 @@ input {
     top: 0;
     left: 0;
 
-    width: 350px;
+    width: 360px;
     max-width: 88vw;
+
     height: 100vh;
 
-    padding: 25px;
+    padding: 24px;
 
-    background: #111a2c;
+    background: #0e172a;
 
     border-right: 1px solid var(--border);
 
-    z-index: 2000;
+    z-index: 3000;
 
     overflow-y: auto;
 
@@ -320,14 +348,15 @@ input {
 
     margin-bottom: 35px;
 
+    padding-bottom: 15px;
+
     border-bottom: 1px solid var(--border);
 }
 
 .menu-header strong {
-    color: var(--text);
+    font-size: 23px;
 
-    font-size: 22px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 .close-menu {
@@ -340,16 +369,13 @@ input {
 
     color: var(--text);
 
-    font-size: 40px;
-    font-weight: 300;
-
-    cursor: pointer;
+    font-size: 38px;
 
     line-height: 1;
 }
 
 .close-menu:hover {
-    color: var(--cyan);
+    color: var(--accent);
 }
 
 
@@ -366,11 +392,13 @@ input {
 .menu-dropdown {
     width: 100%;
 
-    padding: 17px 4px;
+    min-height: 58px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    padding: 12px 8px;
 
     border: 0;
 
@@ -382,16 +410,11 @@ input {
     font-weight: 800;
 
     text-align: left;
-
-    cursor: pointer;
-
-    transition: 0.25s;
 }
 
 .main-menu > a:hover,
 .menu-dropdown:hover {
-    color: var(--cyan);
-    padding-left: 10px;
+    color: var(--accent);
 }
 
 
@@ -402,15 +425,15 @@ input {
 .submenu {
     display: none;
 
-    margin: 5px 0 12px;
+    margin: 4px 0 10px;
 
-    padding: 10px;
+    padding: 8px;
 
     background: var(--card);
 
     border: 1px solid var(--border);
 
-    border-radius: 14px;
+    border-radius: 17px;
 }
 
 .menu-group.open .submenu {
@@ -420,21 +443,20 @@ input {
 .submenu a {
     display: block;
 
-    padding: 12px 13px;
+    padding: 13px 14px;
 
-    color: var(--text-soft);
+    color: var(--muted);
 
     font-size: 15px;
     font-weight: 700;
 
-    border-radius: 8px;
-
-    transition: 0.2s;
+    border-radius: 9px;
 }
 
 .submenu a:hover {
-    color: var(--cyan);
-    background: var(--bg-soft);
+    color: var(--accent);
+
+    background: var(--bg-2);
 }
 
 .menu-dropdown span {
@@ -453,7 +475,7 @@ input {
    ===================================================== */
 
 .menu-footer {
-    margin-top: 40px;
+    margin-top: 35px;
 
     padding-top: 25px;
 
@@ -465,15 +487,15 @@ input {
 .menu-footer p {
     color: var(--text);
 
-    font-size: 16px;
     font-weight: 800;
 }
 
 .social-links {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    flex-wrap: wrap;
+
+    gap: 8px;
 
     margin: 15px 0;
 }
@@ -485,17 +507,8 @@ input {
 
     border-radius: 8px;
 
-    color: var(--text-soft);
+    color: var(--muted);
 
-    font-size: 12px;
-}
-
-.social-links a:hover {
-    color: var(--cyan);
-}
-
-.menu-footer small {
-    color: var(--text-soft);
     font-size: 11px;
 }
 
@@ -509,9 +522,9 @@ input {
 
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.65);
+    z-index: 2500;
 
-    z-index: 1500;
+    background: rgba(0, 0, 0, 0.68);
 
     opacity: 0;
     visibility: hidden;
@@ -526,22 +539,24 @@ input {
 
 
 /* =====================================================
-   6. MAIN CONTAINER
+   MAIN CONTAINER
    ===================================================== */
 
 .container {
-    width: min(1200px, calc(100% - 40px));
+    width: min(1180px, calc(100% - 40px));
 
-    margin: 35px auto 70px;
+    margin: 30px auto 70px;
 }
 
 
 /* =====================================================
-   7. SECTION LABEL
+   HIGHLIGHT LABEL
    ===================================================== */
 
 .section-label {
     width: 100%;
+
+    height: 52px;
 
     display: flex;
     align-items: center;
@@ -558,26 +573,32 @@ input {
 }
 
 .section-label > span {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 22px;
+
     flex-shrink: 0;
 
-    padding: 12px 20px;
-
-    background: var(--cyan);
+    background: var(--accent);
 
     color: #061018;
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 900;
 
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
 }
 
 .highlight-ticker {
-    padding: 0 18px;
+    padding: 0 17px;
 
-    color: var(--text-soft);
+    color: var(--muted);
 
     font-size: 14px;
+    font-weight: 600;
 
     white-space: nowrap;
 
@@ -588,13 +609,15 @@ input {
 
 
 /* =====================================================
-   8. HIGHLIGHT
+   HIGHLIGHT CARD
    ===================================================== */
 
 .highlight-card {
     display: grid;
 
     grid-template-columns: 1.6fr 1fr;
+
+    min-height: 410px;
 
     overflow: hidden;
 
@@ -603,16 +626,11 @@ input {
     border: 1px solid var(--border);
 
     border-radius: var(--radius);
-
-    transition: 0.3s;
-}
-
-.highlight-card:hover {
-    border-color: rgba(34, 211, 238, 0.45);
 }
 
 .highlight-image {
-    min-height: 400px;
+    width: 100%;
+    height: 410px;
 
     overflow: hidden;
 }
@@ -637,26 +655,25 @@ input {
     flex-direction: column;
     justify-content: center;
 
-    padding: 40px;
+    padding: 38px;
 }
 
 .category {
     width: fit-content;
 
-    display: inline-block;
+    margin-bottom: 14px;
 
-    margin-bottom: 15px;
     padding: 7px 13px;
 
-    background: rgba(34, 211, 238, 0.12);
+    background: rgba(34, 211, 238, 0.10);
 
     border: 1px solid rgba(34, 211, 238, 0.35);
 
     border-radius: 999px;
 
-    color: var(--cyan);
+    color: var(--accent);
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 900;
 
     letter-spacing: 1.5px;
@@ -665,15 +682,13 @@ input {
 .highlight-content h1 {
     margin-bottom: 15px;
 
-    color: var(--text);
-
-    font-size: clamp(25px, 3vw, 40px);
+    font-size: clamp(26px, 3vw, 40px);
 
     line-height: 1.18;
 }
 
 .article-meta {
-    color: var(--text-soft);
+    color: var(--muted);
 
     font-size: 13px;
 }
@@ -686,31 +701,33 @@ input {
 .slider-dots {
     display: flex;
     justify-content: center;
+    align-items: center;
+
     gap: 8px;
 
-    margin: 20px 0 50px;
+    margin: 20px 0 45px;
 }
 
 .slider-dots span {
     width: 8px;
     height: 8px;
 
-    border-radius: 50%;
+    background: #3b4a63;
 
-    background: #475569;
+    border-radius: 50%;
 }
 
 .slider-dots span.active {
-    width: 24px;
+    width: 25px;
 
-    border-radius: 10px;
+    background: var(--accent);
 
-    background: var(--cyan);
+    border-radius: 999px;
 }
 
 
 /* =====================================================
-   9. SECTION TITLE
+   SECTION TITLE
    ===================================================== */
 
 .section-title {
@@ -718,7 +735,7 @@ input {
     align-items: center;
     justify-content: space-between;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .section-title h2 {
@@ -735,57 +752,48 @@ input {
     position: absolute;
 
     left: 0;
-    top: 5px;
-    bottom: 5px;
+    top: 3px;
+    bottom: 3px;
 
     width: 4px;
 
-    background: var(--cyan);
+    background: var(--accent);
 
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .section-title a {
-    color: var(--cyan);
+    color: var(--accent);
 
     font-size: 13px;
     font-weight: 800;
 }
 
-.section-title a:hover {
-    color: #67e8f9;
-}
-
 
 /* =====================================================
-   10. POPULAR
+   POPULAR
    ===================================================== */
 
 .popular-list {
-    display: flex;
-    flex-direction: column;
+    overflow: hidden;
 
     background: var(--card);
 
     border: 1px solid var(--border);
 
     border-radius: var(--radius);
-
-    overflow: hidden;
 }
 
 .popular-item {
     display: grid;
 
-    grid-template-columns: 1fr 180px;
+    grid-template-columns: minmax(0, 1fr) 180px;
 
     gap: 25px;
 
-    padding: 24px;
+    padding: 22px;
 
     border-bottom: 1px solid var(--border);
-
-    transition: 0.3s;
 }
 
 .popular-item:last-child {
@@ -793,33 +801,30 @@ input {
 }
 
 .popular-item:hover {
-    background: var(--card-light);
+    background: var(--card-2);
 }
 
 .popular-content {
     min-width: 0;
 }
 
-.popular-content .category {
-    margin-bottom: 10px;
-}
-
 .popular-content h3 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 
-    font-size: 21px;
-    line-height: 1.4;
+    font-size: 20px;
+
+    line-height: 1.35;
 }
 
 .popular-content p {
-    color: var(--text-soft);
+    color: var(--muted);
 
     font-size: 12px;
 }
 
 .popular-image {
     width: 100%;
-    height: 125px;
+    height: 120px;
 
     overflow: hidden;
 
@@ -831,30 +836,33 @@ input {
     height: 100%;
 
     object-fit: cover;
-
-    transition: transform 0.4s;
-}
-
-.popular-item:hover .popular-image img {
-    transform: scale(1.06);
 }
 
 
 /* =====================================================
-   11. LATEST NEWS
+   LATEST
    ===================================================== */
 
-.latest-section {
+.latest-section,
+.game-section,
+.esports-section {
     margin-top: 55px;
 }
 
-.latest-grid {
+.latest-grid,
+.game-news-grid,
+.esports-grid {
     display: grid;
 
     grid-template-columns: repeat(3, 1fr);
 
     gap: 20px;
 }
+
+
+/* =====================================================
+   NEWS CARD
+   ===================================================== */
 
 .news-card {
     overflow: hidden;
@@ -866,14 +874,14 @@ input {
     border-radius: 18px;
 
     transition:
-        transform 0.3s,
-        border-color 0.3s;
+        transform 0.25s,
+        border-color 0.25s;
 }
 
 .news-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-4px);
 
-    border-color: rgba(34, 211, 238, 0.45);
+    border-color: rgba(34, 211, 238, 0.4);
 }
 
 .news-card-image {
@@ -887,11 +895,11 @@ input {
     width: 100%;
     height: 100%;
 
-    display: block;
-
     object-fit: cover;
 
-    transition: transform 0.45s;
+    display: block;
+
+    transition: transform 0.4s;
 }
 
 .news-card:hover .news-card-image img {
@@ -899,15 +907,11 @@ input {
 }
 
 .news-card-content {
-    padding: 20px;
-}
-
-.news-card-content .category {
-    margin-bottom: 10px;
+    padding: 18px;
 }
 
 .news-card-content h3 {
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 
     font-size: 18px;
 
@@ -915,25 +919,22 @@ input {
 }
 
 .news-card-content p {
-    color: var(--text-soft);
+    color: var(--muted);
 
     font-size: 12px;
 }
 
 
 /* =====================================================
-   12. GAME CATEGORY
+   GAME FILTER
    ===================================================== */
-
-.game-section {
-    margin-top: 60px;
-}
 
 .game-categories {
     display: flex;
-    gap: 10px;
 
-    margin-bottom: 25px;
+    gap: 9px;
+
+    margin-bottom: 22px;
 
     overflow-x: auto;
 
@@ -947,7 +948,7 @@ input {
 .game-categories button {
     flex-shrink: 0;
 
-    padding: 10px 16px;
+    padding: 9px 15px;
 
     background: var(--card);
 
@@ -955,68 +956,53 @@ input {
 
     border-radius: 999px;
 
-    color: var(--text-soft);
+    color: var(--muted);
 
-    font-size: 13px;
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition: 0.25s;
+    font-size: 12px;
+    font-weight: 800;
 }
 
-.game-categories button:hover,
-.game-categories button.active {
-    background: var(--cyan);
+.game-categories button.active,
+.game-categories button:hover {
+    background: var(--accent);
 
-    border-color: var(--cyan);
+    border-color: var(--accent);
 
     color: #061018;
 }
 
 
 /* =====================================================
-   13. GAME NEWS
+   EMPTY / ERROR
    ===================================================== */
 
-.game-news-grid {
-    display: grid;
+.empty-state {
+    grid-column: 1 / -1;
 
-    grid-template-columns: repeat(3, 1fr);
+    padding: 40px 20px;
 
-    gap: 20px;
+    text-align: center;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    color: var(--muted);
 }
 
 
 /* =====================================================
-   14. ESPORTS
-   ===================================================== */
-
-.esports-section {
-    margin-top: 60px;
-}
-
-.esports-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-
-/* =====================================================
-   15. FOOTER
+   FOOTER
    ===================================================== */
 
 .site-footer {
-    margin-top: 80px;
-
     padding: 50px 20px;
 
     text-align: center;
 
-    background: #080d18;
+    background: #070b16;
 
     border-top: 1px solid var(--border);
 }
@@ -1024,16 +1010,14 @@ input {
 .footer-logo {
     margin-bottom: 5px;
 
-    color: var(--text);
-
-    font-size: 26px;
+    font-size: 25px;
     font-weight: 900;
 }
 
 .site-footer p {
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 
-    color: var(--text-soft);
+    color: var(--muted);
 
     font-size: 13px;
 }
@@ -1044,78 +1028,38 @@ input {
     justify-content: center;
     flex-wrap: wrap;
 
-    gap: 20px;
+    gap: 18px;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .footer-links a,
 .footer-social a {
-    color: var(--text-soft);
+    color: var(--muted);
 
-    font-size: 13px;
-
-    transition: 0.2s;
+    font-size: 12px;
 }
 
 .footer-links a:hover,
 .footer-social a:hover {
-    color: var(--cyan);
+    color: var(--accent);
 }
 
 .site-footer small {
-    color: #64748b;
+    color: #5d6a80;
 
-    font-size: 11px;
+    font-size: 10px;
 }
 
 
 /* =====================================================
-   16. LOADING
-   ===================================================== */
-
-.loading {
-    padding: 40px;
-
-    text-align: center;
-
-    color: var(--text-soft);
-}
-
-
-/* =====================================================
-   17. EMPTY STATE
-   ===================================================== */
-
-.empty-state {
-    padding: 50px 20px;
-
-    text-align: center;
-
-    color: var(--text-soft);
-
-    background: var(--card);
-
-    border: 1px solid var(--border);
-
-    border-radius: var(--radius);
-}
-
-
-/* =====================================================
-   18. TABLET
+   TABLET
    ===================================================== */
 
 @media (max-width: 900px) {
 
-    .site-header {
-        padding: 0 22px;
-    }
-
     .container {
-        width: min(100% - 28px, 750px);
-
-        margin-top: 25px;
+        width: calc(100% - 30px);
     }
 
     .highlight-card {
@@ -1123,8 +1067,7 @@ input {
     }
 
     .highlight-image {
-        height: 350px;
-        min-height: 0;
+        height: 330px;
     }
 
     .highlight-content {
@@ -1137,35 +1080,30 @@ input {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .popular-item {
-        grid-template-columns: 1fr 160px;
-    }
 }
 
 
 /* =====================================================
-   19. MOBILE
+   MOBILE
    ===================================================== */
 
 @media (max-width: 600px) {
 
     :root {
-        --header-height: 68px;
+        --header: 68px;
     }
 
 
     /* HEADER */
 
     .site-header {
-        height: var(--header-height);
-
         padding: 0 14px;
     }
 
     .menu-button,
     .search-button {
-        width: 42px;
-        height: 42px;
+        width: 43px;
+        height: 43px;
     }
 
     .menu-button span {
@@ -1173,48 +1111,53 @@ input {
     }
 
     .logo {
-        font-size: 20px;
+        font-size: 21px;
     }
 
     .logo small {
-        font-size: 6px;
-        letter-spacing: 1.3px;
-    }
-
-
-    /* SIDE MENU */
-
-    .side-menu {
-        width: min(330px, 88vw);
-
-        padding: 20px;
+        font-size: 5px;
+        letter-spacing: 2px;
     }
 
 
     /* MAIN */
 
     .container {
-        width: calc(100% - 24px);
+        width: calc(100% - 20px);
 
         margin-top: 20px;
-        margin-bottom: 50px;
+    }
+
+
+    /* SEARCH */
+
+    .search-box {
+        width: calc(100% - 20px);
+
+        top: calc(var(--header) + 8px);
+    }
+
+    .search-box input {
+        font-size: 14px;
     }
 
 
     /* HIGHLIGHT LABEL */
 
     .section-label {
-        border-radius: 14px;
+        height: 48px;
+
+        border-radius: 15px;
     }
 
     .section-label > span {
-        padding: 11px 13px;
+        padding: 0 15px;
 
-        font-size: 11px;
+        font-size: 10px;
     }
 
     .highlight-ticker {
-        padding: 0 10px;
+        padding: 0 12px;
 
         font-size: 11px;
     }
@@ -1223,11 +1166,17 @@ input {
     /* HIGHLIGHT */
 
     .highlight-card {
-        border-radius: 18px;
+        display: block;
+
+        min-height: 0;
+
+        border-radius: 19px;
     }
 
     .highlight-image {
-        height: 230px;
+        width: 100%;
+
+        height: 220px;
     }
 
     .highlight-content {
@@ -1235,13 +1184,19 @@ input {
     }
 
     .category {
+        margin-bottom: 11px;
+
         padding: 6px 10px;
 
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .highlight-content h1 {
-        font-size: 24px;
+        margin-bottom: 12px;
+
+        font-size: 23px;
+
+        line-height: 1.28;
     }
 
     .article-meta {
@@ -1256,11 +1211,7 @@ input {
     }
 
 
-    /* SECTION TITLE */
-
-    .section-title {
-        margin-bottom: 15px;
-    }
+    /* TITLES */
 
     .section-title h2 {
         font-size: 23px;
@@ -1274,25 +1225,28 @@ input {
     }
 
     .popular-item {
-        grid-template-columns: 1fr 105px;
+        grid-template-columns: minmax(0, 1fr) 105px;
 
-        gap: 12px;
+        gap: 13px;
 
-        padding: 17px;
+        padding: 17px 15px;
     }
 
     .popular-image {
-        height: 90px;
+        height: 88px;
 
         border-radius: 11px;
     }
 
     .popular-content h3 {
+        margin-bottom: 7px;
+
         font-size: 15px;
 
-        line-height: 1.35;
+        line-height: 1.4;
 
         display: -webkit-box;
+
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
 
@@ -1300,11 +1254,11 @@ input {
     }
 
     .popular-content p {
-        font-size: 10px;
+        font-size: 9px;
     }
 
 
-    /* LATEST */
+    /* NEWS */
 
     .latest-section,
     .game-section,
@@ -1321,34 +1275,77 @@ input {
     }
 
     .news-card-image {
-        height: 190px;
+        height: 200px;
     }
 
-    .news-card-content {
-        padding: 17px;
+
+    /* MENU */
+
+    .side-menu {
+        width: 330px;
+
+        max-width: 88vw;
+
+        padding: 20px;
     }
 
-    .news-card-content h3 {
+    .menu-header {
+        margin-bottom: 25px;
+    }
+
+    .main-menu > a,
+    .menu-dropdown {
+        min-height: 55px;
+
         font-size: 17px;
     }
 
+    .submenu a {
+        padding: 11px 13px;
 
-    /* GAME FILTER */
-
-    .game-categories {
-        margin-right: -5px;
+        font-size: 14px;
     }
 
 
     /* FOOTER */
 
     .site-footer {
-        margin-top: 55px;
-
         padding: 40px 15px;
     }
 
-    .footer-links,
-    .footer-social {
-        gap: 12px;
-   
+}
+
+
+/* =====================================================
+   SMALL PHONE
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .highlight-image {
+        height: 195px;
+    }
+
+    .highlight-content h1 {
+        font-size: 21px;
+    }
+
+    .popular-item {
+        grid-template-columns: minmax(0, 1fr) 90px;
+
+        padding: 14px;
+    }
+
+    .popular-image {
+        height: 78px;
+    }
+
+    .popular-content h3 {
+        font-size: 14px;
+    }
+
+}
