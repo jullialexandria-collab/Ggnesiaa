@@ -75,7 +75,7 @@
     "date": "14 September 2026",
     "image": "assets/images/news-6.jpg",
     "highlight": false,
-    "popular": false
+    "popular": true
   },
   {
     "id": 7,
