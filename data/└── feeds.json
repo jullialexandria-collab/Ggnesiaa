@@ -1,0 +1,14 @@
+{
+  "feeds": [
+    {
+      "name": "KotakGame",
+      "url": "https://www.kotakgame.com/rss/",
+      "category": "Gaming News"
+    },
+    {
+      "name": "GameSpot",
+      "url": "https://www.gamespot.com/feeds/news/",
+      "category": "Gaming News"
+    }
+  ]
+}
